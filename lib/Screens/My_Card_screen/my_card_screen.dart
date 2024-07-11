@@ -1,5 +1,6 @@
-import 'package:fintechapp/Screens/Home_screen/widgets/master_card.dart';
+import 'package:fintechapp/Screens/My_Card_screen/widgets/add_new_card_button.dart';
 import 'package:fintechapp/Screens/My_Card_screen/widgets/back_card.dart';
+import 'package:fintechapp/Screens/My_Card_screen/widgets/front_card.dart';
 import 'package:flutter/material.dart';
 
 class MyCardScreen extends StatelessWidget {
@@ -33,18 +34,24 @@ class MyCardScreen extends StatelessWidget {
       body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(20.0),
-          child:  Column(
+          child: Column(
             children: [
               SizedBox(
-                height: 18,
+                height: 20,
               ),
               // Backcard
               BackCard(),
               SizedBox(
-                height: 20,
+                height: 25,
               ),
               //Frontcard
-              MasterCardWidget()
+            FrontCardWidget(),
+
+              SizedBox(
+                height: 40,
+              ),
+              //Add card
+            AddNewCardButton()
             ],
           ),
         ),
@@ -52,4 +59,3 @@ class MyCardScreen extends StatelessWidget {
     );
   }
 }
-

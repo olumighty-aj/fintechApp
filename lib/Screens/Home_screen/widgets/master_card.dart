@@ -80,7 +80,7 @@ class MasterCardWidget extends StatelessWidget {
                                                 .withOpacity(0.5),
                                           ),
                                           Transform.translate(
-                                            offset: Offset(-10, 0),
+                                            offset: const Offset(-10, 0),
                                             child: CircleAvatar(
                                               radius: 15,
                                               backgroundColor:

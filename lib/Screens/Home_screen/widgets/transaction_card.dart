@@ -20,7 +20,7 @@ class TransactionCard extends StatelessWidget {
       color: Colors.white,
       child: ListTile(
         leading: CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 236, 240, 239),
+            backgroundColor:const Color.fromARGB(255, 236, 240, 239),
             child: getIcon(typeofPayment)),
         title: Text(
           paymentname,
