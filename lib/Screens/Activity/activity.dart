@@ -1,3 +1,5 @@
+import 'package:fintechapp/Screens/Activity/widgets/bar_chart.dart';
+import 'package:fintechapp/Screens/Activity/widgets/smartpay_card.dart';
 import 'package:flutter/material.dart';
 
 class ActivityScreen extends StatelessWidget {
@@ -24,102 +26,58 @@ class ActivityScreen extends StatelessWidget {
               onPressed: () {}, icon: const Icon(Icons.more_horiz_outlined)),
         ],
       ),
-      body: SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding:const EdgeInsets.all(15.0),
           child: Column(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                      3,
-                      (index) => Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              height: 75,
-                              width: 360,
-                              decoration: BoxDecoration(
-                                  color: index % 2 == 0
-                                      ? const Color.fromARGB(158, 23, 27, 97)
-                                      : Colors.black,
-                                  borderRadius: BorderRadius.circular(20)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'Smartpay Cards',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 16),
-                                    ),
-                                    Spacer(),
-                                    Text(
-                                      '**** 8990',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 16),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 12),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 15,
-                                            backgroundColor:
-                                                Colors.white.withOpacity(0.5),
-                                          ),
-                                          Transform.translate(
-                                            offset: const Offset(-10, 0),
-                                            child: CircleAvatar(
-                                              radius: 15,
-                                              backgroundColor:
-                                                  Colors.white.withOpacity(0.5),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )),
-                ),
-              ),
-              SizedBox(
+           const  SmartPayCard(),
+            const  SizedBox(
                 height: 20,
               ),
-              Container(
-                padding: const EdgeInsets.all(12),
-                width: double.maxFinite,
-                height: 350,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey[400]!),
-                    borderRadius: BorderRadius.circular(17)),
-                child: Column(
-                  children: [
-                    Text(
-                      'Total Speding',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(height: 5,),
-                    Text('\$17,420.00', style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600
-                  ),),
-                  ],
-                ),
-              )
+            const  TotalSpendingWithBarChart(),
+             const SizedBox(
+                height: 20,
+              ),
+            const  Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Transactions', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),),
+                  Row(children: [
+                    Text('All', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),),
+                    Icon(Icons.keyboard_arrow_down, color:  Color.fromARGB(158, 23, 27, 97),)
+                  ],)
+              ],),
+              ActivityTransactions()
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class ActivityTransactions extends StatelessWidget {
+  const ActivityTransactions({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: List.generate(5, (index)=> Card(
+        elevation: 1,
+        margin: const EdgeInsets.all(10),
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.grey.withOpacity(.2),
+            child: Icon(Icons.payment_rounded, color: Colors.blue,),
+          ),
+          title: const Text('Smartpay UI kit', style: TextStyle(fontWeight: FontWeight.w700),),
+          subtitle: const Text('ui8.net', style: TextStyle(fontWeight: FontWeight.w700)),
+          trailing: const Text('-\$92.56', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+        ),
+                        )),
+    ));
   }
 }
