@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class MasterCardWidget extends StatelessWidget {
@@ -14,6 +13,7 @@ class MasterCardWidget extends StatelessWidget {
         right: 25,
         child: Container(
           height: 220,
+          width: 350,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
           ),
@@ -44,63 +44,50 @@ class MasterCardWidget extends StatelessWidget {
                                     fontSize: 19,
                                     fontWeight: FontWeight.w400),
                               )),
-                          
                         ],
                       ),
-                    )
-                    ),
-                    Expanded(
-                              flex: 1,
-                              child: Container(
-                                color: const Color.fromRGBO(
-                                    7, 10, 61, 0.62),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .spaceBetween,
-                                    children: [
-                                      const Text(
-                                        '\$10,257.00',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 25,
-                                            fontWeight:
-                                                FontWeight.w600),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 15,
-                                            backgroundColor: Colors
-                                                .white
-                                                .withOpacity(0.5),
-                                          ),
-                                          Transform.translate(
-                                            offset: const Offset(-10, 0),
-                                            child: CircleAvatar(
-                                              radius: 15,
-                                              backgroundColor:
-                                                  Colors.white
-                                                      .withOpacity(
-                                                          0.5),
-                                            ),
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                    )),
+                Expanded(
+                    flex: 1,
+                    child: Container(
+                      color: const Color.fromRGBO(7, 10, 61, 0.62),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              '\$10,257.00',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                CircleAvatar(
+                                  radius: 15,
+                                  backgroundColor:
+                                      Colors.white.withOpacity(0.5),
                                 ),
-                              )
-                              )
-    
+                                Transform.translate(
+                                  offset: const Offset(-10, 0),
+                                  child: CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor:
+                                        Colors.white.withOpacity(0.5),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ))
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 }

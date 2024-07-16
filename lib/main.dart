@@ -1,3 +1,4 @@
+import 'package:fintechapp/Screens/On_boarding/on_boarding.dart';
 import 'package:fintechapp/Screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainScreen(),
+      home: const LoginScreen(),
     );
   }
 }
